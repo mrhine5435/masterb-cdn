@@ -398,24 +398,25 @@
     <div class="mt-8 grid lg:grid-cols-2 gap-8">
       <!-- Contact form -->
       <div class="bg-white rounded-2xl border shadow-sm p-6">
-        <form
-  id="trialForm"
-  name="free-trial"
+       <form
+  action="https://formsubmit.co/INFO@MASTERBKARATE.COM"
   method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
   class="grid gap-4 text-sm"
 >
-  <!-- Netlify needs this hidden input to identify the form -->
-  <input type="hidden" name="form-name" value="free-trial" />
+  <!-- Removes CAPTCHA prompt -->
+  <input type="hidden" name="_captcha" value="false">
 
-  <!-- Honeypot field (hidden from humans, catches bots) -->
-  <p class="hidden">
-    <label>
-      Don’t fill this out if you’re human:
-      <input name="bot-field" />
-    </label>
-  </p>
+  <!-- Optional: redirect to a Thank You page -->
+  <!-- <input type="hidden" name="_next" value="https://masterbkarate.com/thank-you.html"> -->
+
+  <!-- Email subject line -->
+  <input type="hidden" name="_subject" value="New Free Trial Request from Master B’s Karate Website">
+
+  <!-- Format email nicely -->
+  <input type="hidden" name="_template" value="table">
+
+  <!-- Honeypot (anti-spam hidden field) -->
+  <input type="text" name="_honey" class="hidden" style="display:none">
 
   <div class="grid md:grid-cols-2 gap-4">
     <div>
@@ -427,6 +428,7 @@
         class="w-full rounded-2xl border px-3 py-2"
       />
     </div>
+
     <div>
       <label class="block mb-1 font-medium">Phone</label>
       <input
